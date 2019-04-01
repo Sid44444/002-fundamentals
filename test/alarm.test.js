@@ -7,5 +7,21 @@ test('Moans if too early', () => {
 });
 
 test('Snoozing for a set amount', () => {
-  expect(alarm.snooze()).toBe(10);
+  expect(alarm.snooze()).toBe(20);
 });
+
+test('Check is it lunch', () => {
+  let timeNow = new Date();
+  timeNow.setHours(13);
+  expect(alarm.isLunchtime(timeNow)).toBe("Yesssss its lunch time!!!");
+});
+
+test('Check it is not lunch', () => {
+  let timeNow = new Date();
+  timeNow.setHours(11);
+  expect(alarm.isLunchtime(timeNow)).toBe("No get back to work");
+});
+
+
+
+
